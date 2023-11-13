@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -740,7 +739,7 @@ func (c *BaseClient) getBlock(ctx context.Context, method string, args ...interf
 			Nonce:           block.Nonce,
 			BaseFee:         block.BaseFee.ToInt(),
 			WithdrawalsHash: nil,
-			ExcessDataGas:   block.ExcessDataGas.ToInt(),
+			//ExcessDataGas:   block.ExcessDataGas.ToInt(),
 		},
 		Uncles:           uncles,
 		Transactions:     block.Transactions,

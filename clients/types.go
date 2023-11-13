@@ -3,7 +3,6 @@ package clients
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -132,23 +131,23 @@ func (m *WithdrawalCallMsg) ToCallMsg(defaultL2Bridge *common.Address) (*ethereu
 }
 
 type blockMarshaling struct {
-	ParentHash    common.Hash      `json:"parentHash"       gencodec:"required"`
-	UncleHash     common.Hash      `json:"sha3Uncles"       gencodec:"required"`
-	Coinbase      common.Address   `json:"miner"`
-	Root          common.Hash      `json:"stateRoot"        gencodec:"required"`
-	TxHash        common.Hash      `json:"transactionsRoot" gencodec:"required"`
-	ReceiptHash   common.Hash      `json:"receiptsRoot"     gencodec:"required"`
-	Bloom         types.Bloom      `json:"logsBloom"        gencodec:"required"`
-	Difficulty    *hexutil.Big     `json:"difficulty"       gencodec:"required"`
-	Number        *hexutil.Big     `json:"number"           gencodec:"required"`
-	GasLimit      hexutil.Uint64   `json:"gasLimit"         gencodec:"required"`
-	GasUsed       hexutil.Uint64   `json:"gasUsed"          gencodec:"required"`
-	Time          hexutil.Uint64   `json:"timestamp"        gencodec:"required"`
-	Extra         hexutil.Bytes    `json:"extraData"        gencodec:"required"`
-	MixDigest     common.Hash      `json:"mixHash"`
-	Nonce         types.BlockNonce `json:"nonce"`
-	BaseFee       *hexutil.Big     `json:"baseFeePerGas" rlp:"optional"`
-	ExcessDataGas *hexutil.Big     `json:"excessDataGas" rlp:"optional"`
+	ParentHash  common.Hash      `json:"parentHash"       gencodec:"required"`
+	UncleHash   common.Hash      `json:"sha3Uncles"       gencodec:"required"`
+	Coinbase    common.Address   `json:"miner"`
+	Root        common.Hash      `json:"stateRoot"        gencodec:"required"`
+	TxHash      common.Hash      `json:"transactionsRoot" gencodec:"required"`
+	ReceiptHash common.Hash      `json:"receiptsRoot"     gencodec:"required"`
+	Bloom       types.Bloom      `json:"logsBloom"        gencodec:"required"`
+	Difficulty  *hexutil.Big     `json:"difficulty"       gencodec:"required"`
+	Number      *hexutil.Big     `json:"number"           gencodec:"required"`
+	GasLimit    hexutil.Uint64   `json:"gasLimit"         gencodec:"required"`
+	GasUsed     hexutil.Uint64   `json:"gasUsed"          gencodec:"required"`
+	Time        hexutil.Uint64   `json:"timestamp"        gencodec:"required"`
+	Extra       hexutil.Bytes    `json:"extraData"        gencodec:"required"`
+	MixDigest   common.Hash      `json:"mixHash"`
+	Nonce       types.BlockNonce `json:"nonce"`
+	BaseFee     *hexutil.Big     `json:"baseFeePerGas" rlp:"optional"`
+	//ExcessDataGas *hexutil.Big     `json:"excessDataGas" rlp:"optional"`
 
 	Uncles           []*common.Hash `json:"uncles"`
 	Hash             *common.Hash   `json:"hash"`
