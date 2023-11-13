@@ -1,4 +1,4 @@
-module github.com/zksync-sdk/zksync2-go
+module github.com/elementex/zksync2-go
 
 go 1.20
 
